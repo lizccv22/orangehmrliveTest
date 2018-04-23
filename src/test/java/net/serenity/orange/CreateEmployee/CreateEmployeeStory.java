@@ -17,9 +17,9 @@ import static org.hamcrest.Matchers.hasItem;
 @RunWith(SerenityRunner.class)
 public class CreateEmployeeStory {
 
-    private String firstName = "AAA";
-    private String middleName = "AAA";
-    private String lastName = "AAA";
+    private String firstName = "Purple";
+    private String middleName = "Hrm";
+    private String lastName = "Automation";
     private String employeeName = firstName + " " + middleName + " " + lastName;
 
     Actor liz = Actor.named("Liz");
@@ -42,6 +42,6 @@ public class CreateEmployeeStory {
         givenThat(liz).wasAbleTo(LoginElementsFunctions.enteringUsername("Admin", "admin"));
         and(liz).wasAbleTo(CreateEmployeeElementsFunctions.enteringEmployeeData(firstName, middleName, lastName));
         when(liz).attemptsTo(SearchEmployeeElementFunctions.enteringEmployeeName(employeeName));
-        then(liz).should(eventually(seeThat(ValidateEmployeeData.displayed(), hasItem("OrangeHRM"))));
+        then(liz).should(eventually(seeThat(ValidateEmployeeData.displayed(), hasItem(firstName + " " + middleName))));
     }
 }

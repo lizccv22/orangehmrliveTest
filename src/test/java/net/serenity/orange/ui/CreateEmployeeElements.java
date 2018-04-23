@@ -13,5 +13,5 @@ public class CreateEmployeeElements {
     public static Target EMPLOYEE_LIST_TAB = Target.the("employee list tab").located(By.id("menu_pim_viewEmployeeList"));
     public static Target EMPLOYEE_NAME_FIELD = Target.the("employee name field").located(By.id("empsearch_employee_name_empName"));
     public static Target SEARCH_BUTTON = Target.the("search button").located(By.id("searchBtn"));
-    public static Target RESULTS_LIST = Target.the("results list").located(By.id("frmList_ohrmListComponent"));
+    public static Target RESULTS_LIST = Target.the("results list").located(By.xpath("//a[text()='Purple Hrm']"));
 }
